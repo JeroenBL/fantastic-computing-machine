@@ -1,6 +1,6 @@
 name: Setup Repository
 
-on: [create]
+on: [push]
 
 jobs:
   setup:
