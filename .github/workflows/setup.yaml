@@ -18,16 +18,18 @@ jobs:
         echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
         echo "CONNECTOR_NAME=$CONNECTOR_NAME" >> $GITHUB_ENV
 
-    - name: Replace placeholders in PowerShell scripts
+    - name: Replace placeholders in PowerShell scripts and Markdown files
       run: |
         find . -type f \( -name '*.ps1' -o -name '*.md' \) -exec sed -i "s/{repoName}/$REPO_NAME/g" {} +
         find . -type f \( -name '*.ps1' -o -name '*.md' \) -exec sed -i "s/{connectorName}/$CONNECTOR_NAME/g" {} +
         echo "Placeholders replaced with repository name: $REPO_NAME and connector name: $CONNECTOR_NAME"
 
-    - name: Commit changes
+    - name: Commit and push changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --global user.name "${GITHUB_ACTOR}"
         git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
         git add .
         git commit -m "Replace placeholders with repository and connector names"
-        git push
+        git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
