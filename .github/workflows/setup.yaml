@@ -1,0 +1,33 @@
+name: Setup Repository
+
+on: [create]
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Extract repository name and connector name
+      id: extract
+      run: |
+        REPO_NAME=${GITHUB_REPOSITORY##*/}
+        CONNECTOR_NAME=${REPO_NAME##*-}
+        echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
+        echo "CONNECTOR_NAME=$CONNECTOR_NAME" >> $GITHUB_ENV
+
+    - name: Replace placeholders in PowerShell scripts
+      run: |
+        find . -type f \( -name '*.ps1' -o -name '*.md' \) -exec sed -i "s/{repoName}/$REPO_NAME/g" {} +
+        find . -type f \( -name '*.ps1' -o -name '*.md' \) -exec sed -i "s/{connectorName}/$CONNECTOR_NAME/g" {} +
+        echo "Placeholders replaced with repository name: $REPO_NAME and connector name: $CONNECTOR_NAME"
+
+    - name: Commit changes
+      run: |
+        git config --global user.name "${GITHUB_ACTOR}"
+        git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        git add .
+        git commit -m "Replace placeholders with repository and connector names"
+        git push
