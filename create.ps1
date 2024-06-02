@@ -159,7 +159,7 @@ try {
         $auditMessage = "Could not create or correlate {connectorName} account. Error: $($errorObj.FriendlyMessage)"
         Write-Warning "Error at Line '$($errorObj.ScriptLineNumber)': $($errorObj.Line). Error: $($errorObj.ErrorDetails)"
     } else {
-        $auditMessage = "Could not create or correlate {connectorName} account. Error: $($ex.Exception.Message)"
+        $auditMessage = "Could not create or correlate {connectorName} account.. Error: $($ex.Exception.Message)"
         Write-Warning "Error at Line '$($ex.InvocationInfo.ScriptLineNumber)': $($ex.InvocationInfo.Line). Error: $($ex.Exception.Message)"
     }
     $outputContext.AuditLogs.Add([PSCustomObject]@{
