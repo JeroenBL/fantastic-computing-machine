@@ -1,0 +1,27 @@
+name: Question/Help Issue
+about: Use this template to ask questions or request help
+
+title: "[Question] or [Help]: "
+
+labels:
+  - question
+  - help wanted
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Issue Summary
+        <!-- Briefly describe your question or issue -->
+
+        ## Details
+        <!-- Provide more details if necessary -->
+
+        ## Environment
+        <!-- Describe your environment (e.g., operating system, browser) -->
+
+        ## Screenshots (if applicable)
+        <!-- Include screenshots if they would be helpful -->
+
+        ## Additional Information
+        <!-- Any additional context or information -->
