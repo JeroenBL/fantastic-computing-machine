@@ -1,0 +1,30 @@
+name: Documentation Issue 📚
+description: Report an issue or improvement related to documentation
+labels: [documentation, needs-triage]
+body:
+  - type: textarea
+    attributes:
+      label: Summary of the documentation issue
+      description: >
+        Provide a brief summary of the issue or improvement needed in the documentation.
+      placeholder: "What part of the documentation needs attention?"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Description
+      description: >
+        Describe the issue in detail. Include any incorrect information, unclear instructions, or missing details.
+      placeholder: "Explain the problem with the current documentation."
+  - type: textarea
+    attributes:
+      label: Suggested improvement (if applicable)
+      description: >
+        If you have a suggestion for how to improve the documentation, please provide it here.
+      placeholder: "How could the documentation be improved?"
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: >
+        Any additional context or information that might help in addressing the documentation issue.
+      placeholder: "Have you found any relevant sources or references?"
