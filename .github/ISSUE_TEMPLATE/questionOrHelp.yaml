@@ -1,26 +1,13 @@
-name: Question/Help Issue
-
-title: "[Question] or [Help]: "
-
-labels:
-  - question
-  - help wanted
-
+name: Question or Help Request ❓
+description: Ask a question or request help regarding the project
+labels: [question, help wanted]
 body:
-  - type: markdown
+  - type: textarea
     attributes:
-      value: |
-        ## Issue Summary
-        <!-- Briefly describe your question or issue -->
-
-        ## Details
-        <!-- Provide more details if necessary -->
-
-        ## Environment
-        <!-- Describe your environment (e.g., operating system, browser) -->
-
-        ## Screenshots (if applicable)
-        <!-- Include screenshots if they would be helpful -->
-
-        ## Additional Information
-        <!-- Any additional context or information -->
+      label: Summary of your question or issue
+      description: >
+        Provide a clear and concise description of your question or issue.
+        Include any relevant details to help others understand the context.
+      placeholder: "What specific problem or question do you have?"
+    validations:
+      required: true
