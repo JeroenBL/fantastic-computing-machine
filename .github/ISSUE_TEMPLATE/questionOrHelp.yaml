@@ -4,10 +4,10 @@ labels: [question, help wanted]
 body:
   - type: textarea
     attributes:
-      label: Summary of your question or issue
+      label: Summary of your question
       description: >
-        Provide a clear and concise description of your question or issue.
+        Provide a clear and concise description of your question.
         Include any relevant details to help others understand the context.
-      placeholder: "What specific problem or question do you have?"
+      placeholder: "What specific question do you have?"
     validations:
       required: true
