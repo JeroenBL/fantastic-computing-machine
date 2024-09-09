@@ -1,12 +1,12 @@
 name: Question or Help Request ❓
-description: Ask a question or request help regarding the project
+description: Ask a question or help request regarding the project
 labels: [question, help wanted]
 body:
   - type: textarea
     attributes:
-      label: Summary of your question
+      label: Summary of your question or help request
       description: >
-        Provide a clear and concise description of your question.
+        Provide a clear and concise description of your question or help requesst.
         Include any relevant details to help others understand the context.
       placeholder: "What specific question do you have?"
     validations:
