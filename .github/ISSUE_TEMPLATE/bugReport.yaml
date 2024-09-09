@@ -1,4 +1,5 @@
 name: Bug report 🐛
+title: "[DATE]: [BUG]"
 description: Report errors or unexpected behavior 🤔
 labels: [bug, needs-triage]
 body:
